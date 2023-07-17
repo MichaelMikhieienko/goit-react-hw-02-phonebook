@@ -1,3 +1,4 @@
+// filter.jsx
 import React from 'react';
 
 export const Filter = ({ filter, handleFilterChange }) => {

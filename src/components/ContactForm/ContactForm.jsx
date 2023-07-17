@@ -1,3 +1,4 @@
+// ContactForm.jsx
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 
@@ -50,4 +51,3 @@ export const ContactForm = ({ addContact }) => {
     </div>
   );
 };
-

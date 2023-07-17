@@ -18,6 +18,11 @@ export const App = () => {
   const [filter, setFilter] = useState('');
 
   const addContact = (contact) => {
+    const existingContact = contacts.find((c) => c.name === contact.name);
+    if (existingContact) {
+      alert('This contact already exists in the phonebook.');
+      return;
+    }
     setContacts([...contacts, contact]);
   };
 
