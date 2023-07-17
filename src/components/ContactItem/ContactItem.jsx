@@ -1,5 +1,6 @@
 // ContactItem.jsx
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ContactItem = ({ contact, deleteContact }) => {
   const handleDelete = () => {
@@ -13,3 +14,13 @@ export const ContactItem = ({ contact, deleteContact }) => {
     </div>
   );
 };
+
+ContactItem.propTypes = {
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+  deleteContact: PropTypes.func.isRequired,
+};
+
