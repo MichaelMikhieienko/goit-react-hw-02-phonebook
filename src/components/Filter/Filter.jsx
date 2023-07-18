@@ -1,22 +1,27 @@
-// filter.jsx
-import React from 'react';
+// Filter.jsx
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export const Filter = ({ filter, handleFilterChange }) => {
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search by name"
-        value={filter}
-        onChange={handleFilterChange}
-      />
-    </div>
-  );
-};
+class Filter extends Component {
+  render() {
+    const { filter, handleFilterChange } = this.props;
+
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={filter}
+          onChange={handleFilterChange}
+        />
+      </div>
+    );
+  }
+}
 
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
   handleFilterChange: PropTypes.func.isRequired,
 };
 
+export default Filter;

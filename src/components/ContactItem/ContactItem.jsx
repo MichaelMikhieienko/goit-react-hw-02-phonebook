@@ -1,19 +1,24 @@
 // ContactItem.jsx
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export const ContactItem = ({ contact, deleteContact }) => {
-  const handleDelete = () => {
+class ContactItem extends Component {
+  handleDelete = () => {
+    const { contact, deleteContact } = this.props;
     deleteContact(contact.id);
   };
 
-  return (
-    <div>
-      {contact.name} - {contact.number}
-      <button onClick={handleDelete}>Delete</button>
-    </div>
-  );
-};
+  render() {
+    const { contact } = this.props;
+
+    return (
+      <div>
+        {contact.name} - {contact.number}
+        <button onClick={this.handleDelete}>Delete</button>
+      </div>
+    );
+  }
+}
 
 ContactItem.propTypes = {
   contact: PropTypes.shape({
@@ -24,3 +29,4 @@ ContactItem.propTypes = {
   deleteContact: PropTypes.func.isRequired,
 };
 
+export default ContactItem;
